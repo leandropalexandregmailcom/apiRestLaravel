@@ -31,8 +31,8 @@ class EditUserRequest extends FormRequest
     public function messages()
     {
         return [
-            'id.required' => 'O campo id é obrigatório.',
-            'id.integer'  => 'O campo id inválido.',
+            'id.required' => 'Usuário inválido',
+            'id.integer'  => 'Usuário inválido',
         ];
     }
 }

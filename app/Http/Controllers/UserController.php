@@ -12,7 +12,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        return response()->json(User::where(['status' => 1])->get());
+        return view('user/index')->with('users', User::where(['status' => 1])->get());
     }
 
     public function show()
@@ -24,23 +24,23 @@ class UserController extends Controller
     {
         User::create($request->all());
 
-        return response()->json(['status' => 200, 'message' => 'Cadastro efetuado com sucesso']);
+        return view('user/index')->with('users', User::where(['status' => 1])->get());
     }
 
     public function update(UpdateUserRequest $request)
     {
-        User::where(['id' => $request->id])->update($request->all());
+        User::where(['id' => $request->id])->update($request->except('_token'));
 
-        return response()->json(['status' => 200, 'message' => 'Atualização realizada com sucesso']);
+        return view('user/index')->with('users', User::where(['status' => 1])->get());
     }
 
     public function edit(EditUserRequest $request)
     {
-        return response()->json(['status' => 200, 'user' => User::where(['id' => $request->id])->first()]);
+        return view('user/edit')->with('user', User::where(['status' => 1])->first());
     }
 
     public function delete(EditUserRequest $request)
     {
-        return response()->json(['status' => 200, 'message' => 'Exclusão realizada com sucesso']);
+        return view('user/index')->with('users', User::where(['status' => 1])->update(['status' => 0]));
     }
 }
