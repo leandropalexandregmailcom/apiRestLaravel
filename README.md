@@ -1,3 +1,12 @@
+Para instalar o framework, entre na pasta do projeto, certifique-se de que possui o composer instalado e caso 
+não tenha faça a instalação. 
+
+Após instalar o composer digite no terminal de comando: composer install, esse comando irá instalar as dependências do projeto. Logo após a instalação das dependências digite o comando: php artisan generate:key. Esse outro comando vai gerar uma chave para a aplicação.
+
+Configure o seu banco de dados renomeando o arquivo .env.example para .env e passe os parâmetros de acesso ao seu banco de dados nas devidas variáveis desse mesmo arquivo.
+Para finalizar digite o comando: php artisan migrate. Esse comando vai criar as tabelas no seu banco de dados.
+
+Quando for testar a aplicação, não se esqueça de rodar o comando: php artisan serve para subir o servidor do laravel e de entrar na pasta public através do seu navegador.
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
